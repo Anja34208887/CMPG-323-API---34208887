@@ -11,8 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(options => { options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "ConnectedOffice-34208887-API", Version = "v2", Description = "API Test", }); });
-builder.Services.AddDbContext<ConnectedOfficeContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-var dbConnectionString = builder.Configuration.GetSection("ConnectionStrings:DefaultConnection").Value;
+builder.Services.AddDbContext<ConnectedOfficeContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
+var dbConnectionString = builder.Configuration.GetSection("ConnectionStrings:ConnStr").Value;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
