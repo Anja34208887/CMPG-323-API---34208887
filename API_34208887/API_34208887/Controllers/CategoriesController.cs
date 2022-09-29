@@ -6,9 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API_34208887.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using API_34208887.Authentication;
 
 namespace API_34208887.Controllers
 {
+    [Authorize(Roles= UserRoles.Admin)]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
